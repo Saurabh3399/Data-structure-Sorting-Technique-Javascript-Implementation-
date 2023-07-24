@@ -1,0 +1,31 @@
+
+function bubble_sort(arr){
+    let swapping_flag;
+
+    do{
+        swapping_flag = false
+        for (let i = 0; i < arr.length-1; i++){
+        if ( arr[i] > arr[i+1]){
+            let temp;
+            temp = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = temp
+            swapping_flag = true
+        }
+    }
+
+    }
+    while (swapping_flag);
+    // console.log('Sorted array : ',arr);
+}
+
+
+const data = [10,2,5,11,3,11,9,4,7,14]
+console.log('Original array : ',data.toString());
+bubble_sort(data)
+console.log('Sorted array : ',data.toString());
+
+(o) n2
+
+const data = ['s',2,5,6,2,3,9,4,7,5]
+console.log(data[0]);

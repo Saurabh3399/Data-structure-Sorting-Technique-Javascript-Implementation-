@@ -1,0 +1,36 @@
+
+class Node{
+    constructor(value){
+        this.value = value
+        this.next = null 
+    }
+
+}
+
+class LinkedList{
+    constructor(){
+        this.head = null 
+        this.size = 0 
+    }
+    
+
+    insertion(value, pos){
+        if (pos === 0){
+            this.node = new Node(value)
+            this.node.next = this.head
+            console.log(this.node.value);
+        }
+
+        // else if(pos === -1){
+        //     // insert at the end
+        // }
+    }
+    // display(){
+
+    // }
+
+    
+}
+
+const linkedList = new LinkedList();
+linkedList.insertion(12, 0)

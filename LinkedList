@@ -1,36 +1,78 @@
 
+
 class Node{
     constructor(value){
         this.value = value
         this.next = null 
     }
-
 }
 
 class LinkedList{
     constructor(){
-        this.head = null 
-        this.size = 0 
+        this.head=null 
+        this.size=0;
     }
-    
+    isEmpty(){
+        return this.size === 0
+    }
+    prepend(value){
+        const node = new Node(value)
 
-    insertion(value, pos){
-        if (pos === 0){
-            this.node = new Node(value)
-            this.node.next = this.head
-            console.log(this.node.value);
+        if (this.isEmpty()){
+            this.head = node 
+        } else {
+            node.next = this.head
+            this.head = node
+        }
+        this.size++
+    }
+
+    append(value){
+        const node = new Node(value)
+        if(this.isEmpty()){
+            this.head = node 
+        } else {
+            let curr = this.head
+            while (curr.next){
+
+                curr = curr.next
+            }
+            curr.next = node
+        }
+        this.size++
+    }
+
+    print(){
+        if (this.isEmpty()){
+            console.log('Your linked list is empty');
+        }
+        else {
+            let curr = this.head;
+            let list = ''
+
+            while (curr){
+                list += `${curr.value } -> ` 
+                curr = curr.next
+            }
+            console.log(list);
         }
 
-        // else if(pos === -1){
-        //     // insert at the end
-        // }
     }
-    // display(){
-
-    // }
-
-    
 }
 
-const linkedList = new LinkedList();
-linkedList.insertion(12, 0)
+const mylist = new LinkedList()
+// console.log(mylist.isEmpty());
+mylist.prepend(12)
+mylist.prepend(14)
+mylist.prepend(15)
+mylist.prepend(16)
+mylist.prepend(17)
+mylist.prepend(18)
+mylist.append(11)
+mylist.append(10)
+mylist.append(20)
+mylist.append(21)
+mylist.append(22)
+mylist.append(23)
+
+mylist.print()
